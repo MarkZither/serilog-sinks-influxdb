@@ -1,5 +1,6 @@
 using Nuke.Common;
 using Nuke.Common.CI;
+using Nuke.Common.CI.AzurePipelines;
 using Nuke.Common.CI.TeamCity;
 using Nuke.Common.Execution;
 using Nuke.Common.Git;
@@ -18,11 +19,12 @@ using static Nuke.Common.Tools.DotNet.DotNetTasks;
     VcsTriggerBranchFilters = new[] { "" },
     VcsTriggeredTargets = new[] { nameof(Clean), nameof(Restore), nameof(Compile) }
     )]
-//[AzurePipelines(
-//    AzurePipelinesImage.UbuntuLatest,
-//    AzurePipelinesImage.WindowsLatest,
-//    AzurePipelinesImage.MacOsLatest,
-//    InvokedTargets = new[] { nameof(Test), nameof(Pack) })]
+[AzurePipelines(
+    AzurePipelinesImage.UbuntuLatest,
+    AzurePipelinesImage.WindowsLatest,
+    AzurePipelinesImage.MacOsLatest,
+    AutoGenerate = true,
+    InvokedTargets = new[] { nameof(Clean), nameof(Restore), nameof(Compile) })]
 [CheckBuildProjectConfigurations]
 [ShutdownDotNetAfterServerBuild]
 class Build : NukeBuild
