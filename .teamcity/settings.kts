@@ -50,7 +50,6 @@ object Clean : BuildType({
     name = "Clean"
     vcs {
         root(DslContext.settingsRoot)
-        cleanCheckout = true
     }
     steps {
         exec {
@@ -60,7 +59,7 @@ object Clean : BuildType({
     }
     triggers {
         vcs {
-            branchFilter = "nuke"
+            branchFilter = ""
             triggerRules = "+:**"
         }
     }
@@ -69,7 +68,6 @@ object Restore : BuildType({
     name = "Restore"
     vcs {
         root(DslContext.settingsRoot)
-        cleanCheckout = true
     }
     steps {
         exec {
@@ -79,7 +77,7 @@ object Restore : BuildType({
     }
     triggers {
         vcs {
-            branchFilter = "nuke"
+            branchFilter = ""
             triggerRules = "+:**"
         }
     }
@@ -88,7 +86,6 @@ object Compile : BuildType({
     name = "Compile"
     vcs {
         root(DslContext.settingsRoot)
-        cleanCheckout = true
     }
     steps {
         exec {
@@ -98,7 +95,7 @@ object Compile : BuildType({
     }
     triggers {
         vcs {
-            branchFilter = "nuke"
+            branchFilter = ""
             triggerRules = "+:**"
         }
     }
