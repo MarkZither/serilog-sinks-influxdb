@@ -15,7 +15,7 @@ using static Nuke.Common.Tools.DotNet.DotNetTasks;
     Version = "2020.1",
     AutoGenerate = true,
     CleanCheckoutDirectory = false,    
-    VcsTriggerBranchFilters = new[] { "nuke" },
+    VcsTriggerBranchFilters = new[] { "" },
     VcsTriggeredTargets = new[] { nameof(Clean), nameof(Restore), nameof(Compile) }
     )]
 //[AzurePipelines(
