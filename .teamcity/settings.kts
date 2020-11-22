@@ -61,6 +61,8 @@ object Clean : BuildType({
         vcs {
             branchFilter = ""
             triggerRules = "+:**"
+            perCheckinTriggering = true
+            enableQueueOptimization = false
         }
     }
 })
@@ -79,6 +81,8 @@ object Restore : BuildType({
         vcs {
             branchFilter = ""
             triggerRules = "+:**"
+            perCheckinTriggering = true
+            enableQueueOptimization = false
         }
     }
 })
@@ -97,6 +101,8 @@ object Compile : BuildType({
         vcs {
             branchFilter = ""
             triggerRules = "+:**"
+            perCheckinTriggering = true
+            enableQueueOptimization = false
         }
     }
     dependencies {
