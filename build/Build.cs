@@ -14,7 +14,7 @@ using static Nuke.Common.Tools.DotNet.DotNetTasks;
     TeamCityAgentPlatform.Unix,
     Version = "2020.1",
     AutoGenerate = true,
-    CleanCheckoutDirectory = true,
+    CleanCheckoutDirectory = false,    
     VcsTriggerBranchFilters = new[] { "nuke" },
     VcsTriggeredTargets = new[] { nameof(Clean), nameof(Restore), nameof(Compile) }
     )]
